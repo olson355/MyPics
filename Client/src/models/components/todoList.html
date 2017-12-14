@@ -1,7 +1,8 @@
 <template>
     
         <div class="card topMargin">
-    
+            <th> Welcome to your Galleries!</th>
+
             <div class="card-body">
     
                 <div class="row">
@@ -17,7 +18,6 @@
                         </span>
                     </span>
                 </div>
-                <div show.bind="todos.todosArray.length">
     
                     <span class="col">
     
@@ -25,7 +25,6 @@
     
                             <label class="form-check-label">
     
-                                <input change.trigger="toggleShowCompleted()" type="checkbox" class="form-check-input">                 Show completed
                             </label>
                         </div>
                     </span>
@@ -33,38 +32,21 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ToDo</th>
-    
-                                <th>Due Date</th>
-    
-                                <th>Priority</th>
+                                <th>Gallery</th>
     
                                 <th>File</th>
-    
-                                <th>Edit</th>
     
     
                             </tr>
                         </thead>
                         <tbody>
                             <tbody>
-                                <tr class="${todo.priority === 'Critical' ? 'table-secondary' : ' '} " repeat.for="todo of todos.todosArray| completed:showCompleted">
-                                    <td>${todo.todo}</td>
-                                    <td>${todo.dateDue | dateFormat}</td>
-                                    <td>${todo.priority}</td>
-                                    <td>
-                                        <a href="uploads/${user._id}/${todo.file.fileName}" target="_blank">${todo.file.originalName}</a>
-                                    </td>
     
                                     <td>
     
                                         <i click.trigger="editTodo(todo)" class="fa fa-pencil rightMargin" aria-hidden="true"></i>
     
                                         <i click.trigger="deleteTodo(todo)" class="fa fa-trash rightMargin" aria-hidden="true"></i>
-    
-                                        <i show.bind="!todo.completed" click.trigger="completeTodo(todo)" class="fa fa-square-o" aria-hidden="true"></i>
-    
-                                        <i show.bind="todo.completed " click.trigger="completeTodo(todo)" class="fa fa-check " aria-hidden="true "></i>
     
     
                                     </td>
@@ -74,7 +56,7 @@
                     </table>
                 </div>
                 <div show.bind="!todos.todosArray.length">
-                    <h2>Apparently, you don't have anything to do!</h2>
+                    <h2>Apparently, you don't have any Galleries!</h2>
                 </div>
     
             </div>
